@@ -7,13 +7,13 @@
 <h1>Funcionários</h1>
 
 <mensagem texto="@TempData["msg"]"></mensagem>
-    
- 
+
+
 <nav class="navbar navbar-light bg-light">
     <a asp-action="cadastrar" class="btn btn-primary">Cadastrar Novo</a>
-    <form class="form-inline" asp-action="index">
-        <input class="form-control mr-sm-2" placeholder="Insira a busca" aria-label="Pesquisar">
-        <button class="btn btn-success my-2 my-sm-0" type="submit" >Pesquisar</button>
+    <form class="form-inline" asp-action="pesquisar">
+        <input class="form-control mr-sm-2" placeholder="Insira o setor" aria-label="Pesquisar">
+        <button class="btn btn-success my-2 my-sm-0" type="submit">Pesquisar</button>
     </form>
 </nav>
 
@@ -47,7 +47,8 @@
             <td>
                 <a asp-action="editar" asp-route-id="@item.Codigo" class="btn btn-sm btn-outline-warning">Editar</a>
             </td>
-            <td>    <!-- Button trigger modal -->
+            <td>
+                <!-- Button trigger modal -->
                 <button onclick="idFuncionario.value = @item.Codigo" type="button" class="btn btn-sm btn-outline-danger" data-toggle="modal" data-target="#deleteModal">
                     Remover
                 </button>

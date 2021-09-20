@@ -28,6 +28,7 @@ namespace Prodigium.Web.Checkpoint01.Models
         [Display(Name = "Salário")]
         public decimal Salario { get; set; }
         
+        [Display(Name ="Ativo")]
         public bool Status { get; set; }
     }
 

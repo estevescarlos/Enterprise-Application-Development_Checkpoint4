@@ -1,0 +1,17 @@
+﻿@model Funcionario
+
+@{
+    ViewData["Title"] = "Editar Funcionario";
+}
+
+<form asp-action="editar">
+    <div class="card border-secondary">
+        <h2>Editar Funcionário</h2>
+        <input asp-for="Codigo" />
+        <div class="card-body">
+            <partial name="_Form" />
+            <input type="submit" class="btn btn-success" value="Salvar" />
+            <a asp-action="index" class="btn btn-danger">Cancelar</a>
+        </div>
+    </div>
+</form>
