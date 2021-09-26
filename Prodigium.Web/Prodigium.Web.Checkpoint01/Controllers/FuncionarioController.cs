@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Prodigium.Web.Checkpoint01.Models;
@@ -49,12 +50,11 @@ namespace Prodigium.Web.Checkpoint01.Controllers
         
         private static int _codigo = 4;
 
-        
         [HttpGet]
-        public IActionResult Pesquisar(int codigo)
+        public IActionResult Pesquisar(int id)
         {
-            _funcionarios = _funcionarios.FindAll(c => c.Codigo == codigo);
-            return RedirectToAction("Index");
+            var funcionarios = _funcionarios.Where(c => c.Codigo == id);
+            return View(funcionarios);
         }
 
         [HttpPost]
@@ -103,6 +103,7 @@ namespace Prodigium.Web.Checkpoint01.Controllers
             var lista = new List<string>(new string[] { "Estagiário", "Auxiliar", "Assistente", "Analista", "Supervisor", "Gerente" });
             ViewBag.niveis = new SelectList(lista);
         }
+
 
         public IActionResult Index()
         {
